@@ -17,6 +17,7 @@ for tries in range (0,3):
 
     if (correct):
         print('Congratulations, you win!')
+        break;
     else:
         if (lower):
             print('Wrong! Type a GREATER number! ')
