@@ -4,11 +4,12 @@ print('------------------------------')
 
 secret_number = 42
 
-guess = input("Type your number: ")
+number = input("Type your number: ")
+number = int(number)
 
-print('You typed', guess)
+print('You typed', number)
 
-if (guess == secret_number):
+if (number == secret_number):
     print('Congratulations, you win!')
 else:
     print('U LOSE!')
