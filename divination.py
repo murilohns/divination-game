@@ -12,6 +12,10 @@ for tries in range (1, chances + 1):
     number = input("Type your number: ")
     number = int(number)
 
+    if(number < 0 or number > 100):
+        print("Please, type a number between 1 and 100.")
+        continue
+
     correct = number == secret_number
     lower = number < secret_number
     greater = number > secret_number
