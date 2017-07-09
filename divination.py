@@ -7,8 +7,8 @@ chances = int(chances)
 secret_number = 42
 tries = 0
 
-for tries in range (0, chances):
-    print("Try {} of {}".format(tries + 1, chances))
+for tries in range (1, chances + 1):
+    print("Try {} of {}".format(tries, chances))
     number = input("Type your number: ")
     number = int(number)
 
