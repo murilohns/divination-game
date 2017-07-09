@@ -2,10 +2,13 @@ print('------------------------------')
 print('Welcome to the Divination Game')
 print('------------------------------')
 
+chances = input("Digite a quantidade de chances: ")
+chances = int(chances)
 secret_number = 42
 tries = 0
 
-for tries in range (0,3):
+for tries in range (0, chances):
+    print("Try {} of {}".format(tries + 1, chances))
     number = input("Type your number: ")
     number = int(number)
 
