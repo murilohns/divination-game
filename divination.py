@@ -30,3 +30,5 @@ for tries in range (1, chances + 1):
             print('Wrong! Type a GREATER number! ')
         elif (greater):
             print('Wrong! Type a LOWER number!')
+
+print("The end")
