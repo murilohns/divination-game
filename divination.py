@@ -4,10 +4,21 @@ print('------------------------------')
 print('Welcome to the Divination Game')
 print('------------------------------')
 
-chances = input("Digite a quantidade de chances: ")
-chances = int(chances)
 secret_number = randint(0, 100)
 tries = 0
+chances = 0
+
+level = input("Choose the Dificulty: 1- Easy, 2- Normal, 3- Hard, 4- GOD")
+level = int(level)
+
+if (level == 1):
+    chances = 10
+elif (level == 2):
+    chances = 5
+elif (level == 3):
+    chances = 3
+else:
+    chances = 1
 
 for tries in range (1, chances + 1):
     print("Try {} of {}".format(tries, chances))
@@ -32,5 +43,5 @@ for tries in range (1, chances + 1):
             print('Wrong! Type a GREATER number! ')
         elif (greater):
             print('Wrong! Type a LOWER number!')
-
+print("The secret number is:", secret_number)
 print("The end")
