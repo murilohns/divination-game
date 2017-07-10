@@ -47,3 +47,6 @@ def play():
 
     print("The secret number is:", secret_number)
     print("The end")
+
+if(__name__ == "__main__"):
+    play()

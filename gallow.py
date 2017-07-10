@@ -4,3 +4,6 @@ def play():
     print('------------------------------')
 
     print("The end")
+
+if(__name__ == "__main__"):
+    play()
