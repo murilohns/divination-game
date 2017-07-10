@@ -7,9 +7,9 @@ print('------------------------------')
 secret_number = randint(0, 100)
 tries = 0
 chances = 0
+points = 100
 
-level = input("Choose the Dificulty: 1- Easy, 2- Normal, 3- Hard, 4- GOD")
-level = int(level)
+level = int(input("Choose the Dificulty: 1- Easy, 2- Normal, 3- Hard, 4- GOD"))
 
 if (level == 1):
     chances = 10
@@ -22,8 +22,7 @@ else:
 
 for tries in range (1, chances + 1):
     print("Try {} of {}".format(tries, chances))
-    number = input("Type your number: ")
-    number = int(number)
+    number = int(input("Type your number: "))
 
     if(number < 1 or number > 100):
         print("Please, type a number between 1 and 100.")
@@ -36,12 +35,14 @@ for tries in range (1, chances + 1):
     print('You typed', number)
 
     if (correct):
-        print('Congratulations, you win!')
+        print('You win with {} points!'.format(points))
         break;
     else:
         if (lower):
             print('Wrong! Type a GREATER number! ')
         elif (greater):
             print('Wrong! Type a LOWER number!')
+        points = points - abs(secret_number - number)
+
 print("The secret number is:", secret_number)
 print("The end")
