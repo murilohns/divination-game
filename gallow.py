@@ -4,6 +4,11 @@ def play():
     print('------------------------------')
     
     secret_word = "banana"
+    
+    values = []
+    for i in secret_word:
+        values.append("_")
+
     hanged = False
     correct = False
     
@@ -14,7 +19,9 @@ def play():
         for l in secret_word:
             if (l.lower() == letter.lower()):
                 print("Found ", l, "in position", index)
+                values[index] = l
             index += 1 
+        print(values)
 
     print("The end")
 
