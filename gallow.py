@@ -8,7 +8,13 @@ def play():
     correct = False
     
     while (not hanged and not correct):
-        print("Playing")
+        letter = input("Type a letter: ")
+
+        index = 0;
+        for l in secret_word:
+            if (l == letter):
+                print("Found ", l, "in position", index)
+            index += 1 
 
     print("The end")
 
