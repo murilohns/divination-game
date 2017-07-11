@@ -8,11 +8,11 @@ def play():
     correct = False
     
     while (not hanged and not correct):
-        letter = input("Type a letter: ")
+        letter = input("Type a letter: ").strip()
 
         index = 0;
         for l in secret_word:
-            if (l == letter):
+            if (l.lower() == letter.lower()):
                 print("Found ", l, "in position", index)
             index += 1 
 
