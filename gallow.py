@@ -5,9 +5,7 @@ def play():
     
     secret_word = "banana".lower()
     
-    values = []
-    for i in secret_word:
-        values.append("_")
+    values = ['_' for letter in secret_word]
 
     print (values)
     hanged = False
