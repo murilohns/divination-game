@@ -12,7 +12,7 @@ def play():
     print (values)
     hanged = False
     correct = False
-    wrongs = 0
+    wrongs = 6
 
     while (not hanged and not correct):
         letter = input("Type a letter: ").strip().lower()
@@ -25,9 +25,10 @@ def play():
                     values[index] = l
                 index += 1
         else:
-            wrongs += 1
+            wrongs -= 1
+            print("Miss! U have {} tries".format(wrongs))
         
-        hanged = wrongs == 6
+        hanged = wrongs == 0
         correct = '_' not in values
 
         word = str()
