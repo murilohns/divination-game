@@ -1,10 +1,10 @@
 import random 
-
-def play():   
+def welcome_message():
     print('------------------------------')
     print('Welcome to the Divination Game')
     print('------------------------------')
     
+def choose_word():
     words = []
     file = open('words.txt', 'r')
     for line in file:
@@ -14,10 +14,19 @@ def play():
     
     ind = random.randrange(0, len(words))    
     secret_word = words[ind].lower()
-    
-    values = ['_' for letter in secret_word]
+    return secret_word
 
-    print (values)
+def init_right_letters(word):
+    return ['_' for letter in word]
+
+def play():   
+    welcome_message()
+    
+    secret_word = choose_word()
+
+    right_letters = init_right_letters(secret_word)
+
+    print (right_letters)
     hanged = False
     correct = False
     wrongs = 6
@@ -30,17 +39,17 @@ def play():
             for l in secret_word:
                 if (l == letter):
                     print("Found ", l, "in position", index)
-                    values[index] = l
+                    right_letters[index] = l
                 index += 1
         else:
             wrongs -= 1
             print("Miss! U have {} tries".format(wrongs))
         
         hanged = wrongs == 0
-        correct = '_' not in values
+        correct = '_' not in right_letters
 
         word = str()
-        for l in values:
+        for l in right_letters:
             word += l + " "
 
         print(word)
