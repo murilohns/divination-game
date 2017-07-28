@@ -19,28 +19,33 @@ def choose_word():
 def init_right_letters(word):
     return ['_' for letter in word]
 
+def guess():
+    return input("Type a letter: ").strip().lower()
+
+def correct_answer(letter, right_letters, secret_word):
+    index = 0;
+    for l in secret_word:
+        if (l == letter):
+            print("Found ", l, "in position", index)
+            right_letters[index] = l
+        index += 1
+
 def play():   
     welcome_message()
-    
     secret_word = choose_word()
 
     right_letters = init_right_letters(secret_word)
-
     print (right_letters)
+    
     hanged = False
     correct = False
     wrongs = 6
 
     while (not hanged and not correct):
-        letter = input("Type a letter: ").strip().lower()
+        letter = guess()
 
-        index = 0;
         if (letter in secret_word):
-            for l in secret_word:
-                if (l == letter):
-                    print("Found ", l, "in position", index)
-                    right_letters[index] = l
-                index += 1
+            correct_answer(letter, right_letters, secret_word)
         else:
             wrongs -= 1
             print("Miss! U have {} tries".format(wrongs))
@@ -48,11 +53,8 @@ def play():
         hanged = wrongs == 0
         correct = '_' not in right_letters
 
-        word = str()
-        for l in right_letters:
-            word += l + " "
-
-        print(word)
+        print(right_letters)
+        
     if(correct):
         print("YOU ARE THE CHAMPION!!")
     else:
