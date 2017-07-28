@@ -1,9 +1,19 @@
+import random 
+
 def play():   
     print('------------------------------')
     print('Welcome to the Divination Game')
     print('------------------------------')
     
-    secret_word = "banana".lower()
+    words = []
+    file = open('words.txt', 'r')
+    for line in file:
+        words.append(line.strip())
+
+    file.close()
+    
+    ind = random.randrange(0, len(words))    
+    secret_word = words[ind].lower()
     
     values = ['_' for letter in secret_word]
 
@@ -38,6 +48,7 @@ def play():
         print("YOU ARE THE CHAMPION!!")
     else:
         print("YOU LOSE!!")
+    print(secret_word)
     print("The end")
 
 if(__name__ == "__main__"):
